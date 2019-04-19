@@ -36,8 +36,8 @@ public class CompanyServiceImpl implements ICompanyService {
         return company;
     }
 
-    @Override
+/*    @Override
     public Company findByName(String name) {
-        return null;
-    }
+        return companyRepository.findByName(name);
+    } */
 }

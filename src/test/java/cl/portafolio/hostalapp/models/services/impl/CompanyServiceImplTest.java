@@ -10,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
 import java.util.List;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -57,7 +58,7 @@ public class CompanyServiceImplTest {
 
     }
 
-    @Test
+    /*@Test
     public void findByName() {
 
         Company company = new Company();
@@ -65,8 +66,9 @@ public class CompanyServiceImplTest {
         company.setName(NAME_COMPANY);
         company.setAdress(ADRESS_COMPANY);
 
-   //     when(companyRepository.findByName("Empresa_uno")).thenReturn(company.getName());
+        Company company_aux = companyService.findByName(NAME_COMPANY);
 
+        assertTrue(company_aux.getName().equals("Empresa_uno"));
 
-    }
+    } */
 }

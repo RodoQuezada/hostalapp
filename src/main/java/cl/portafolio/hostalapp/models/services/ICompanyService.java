@@ -11,7 +11,7 @@ public interface ICompanyService {
 
     Company save(Company company);
 
-    Company findByName(String name);
+  //  Company findByName(String name);
 
 
 }
