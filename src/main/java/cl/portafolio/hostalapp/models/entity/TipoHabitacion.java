@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -18,13 +19,12 @@ public class TipoHabitacion implements Serializable {
     private Long id;
 
     @Column(name = "precio_habitacion")
-    private int precioTipoHab;
+    private int precioTipoHabitacion;
 
     @Column(name = "capacidad_habitacion")
-    private int capacidadTipoHab;
+    private int capacidadTipoHabitacion;
 
-    @Column(name = "tipo")
-    private String tipoHab;
-
+    @Column(name = "tipo_habitacion")
+    private String tipoHabitacion;
 
 }
