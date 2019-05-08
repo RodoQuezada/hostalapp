@@ -63,7 +63,7 @@ public class HabitacionServiceImplTest {
         Habitacion habitacion_2 = new Habitacion();
         when(habitacionRepository.findAll()).thenReturn(Arrays.asList(habitacion_1, habitacion_2));
         List<Habitacion> habitacionList = habitacionService.getAll();
-        assertEquals(2, habitacionList.size());
+        assertEquals(3, habitacionList.size());
 
     }
 
