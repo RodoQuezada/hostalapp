@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 
 public class HabitacionServiceImplTest {
 
-
+/*
     @Mock
     IHabitacionRepository habitacionRepository;
     HabitacionServiceImpl habitacionService;
@@ -108,5 +108,5 @@ public class HabitacionServiceImplTest {
 
 
 
-    }
+    } */
 }

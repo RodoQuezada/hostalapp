@@ -12,9 +12,6 @@ public interface IHabitacionService {
 
     Habitacion save (Habitacion habitacion);
 
-    Habitacion getById(Long id);
-
-    TipoHabitacion getTipoHabitacionById(Long id);
 
 
 }

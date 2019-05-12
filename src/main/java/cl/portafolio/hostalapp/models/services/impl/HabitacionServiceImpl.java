@@ -19,41 +19,36 @@ public class HabitacionServiceImpl implements IHabitacionService {
 
 
     @Autowired
-    private ITipoHabitacionRepository tipoHabitacionRepository;
+    private IHabitacionRepository habitacionRepository;
 
-    private final IHabitacionRepository habitacionRepository;
 
-    public HabitacionServiceImpl(IHabitacionRepository habitacionRepository) {
-        this.habitacionRepository = habitacionRepository;
+    @Override
+    public List<Habitacion> getAll() {
+        System.out.println(" ------  pasa al servicio");
+        return (List<Habitacion>) habitacionRepository.findAll();
     }
 
 
+
+    /*
     @Override
     @Transactional
     public List<Habitacion> getAll(){
         List<Habitacion> habitacionList = new ArrayList<>();
-        habitacionRepository.findAll().forEach(habitacionList::add);
+        //habitacionRepository.findAll().forEach(habitacionList::add);
+        habitacionList = (List<Habitacion>) habitacionRepository.findAll();
+        System.out.println("cuasdasdasd -->"+ habitacionList.size());
         return habitacionList;
-    }
+    }*/
 
     @Override
-    @Transactional(readOnly = false)
     public Habitacion save(Habitacion habitacion) {
+        System.out.println("---- asaaaaaaaaaaaa----------- ");
         habitacionRepository.save(habitacion);
         return habitacion;
     }
 
-    @Override
-    @Transactional
-    public Habitacion getById(Long id) {
-        Habitacion habitacion =  habitacionRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
-        return habitacion;
-    }
 
-    @Override
-    public TipoHabitacion getTipoHabitacionById(Long id) {
-        TipoHabitacion tipoHabitacion = tipoHabitacionRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
-        return tipoHabitacion;
-    }
+
 
 }
