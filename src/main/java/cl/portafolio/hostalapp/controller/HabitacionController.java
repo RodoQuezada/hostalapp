@@ -66,8 +66,6 @@ public class HabitacionController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Habitacion save(@RequestBody Habitacion habitacion){
-        System.out.println("controller habitacion ----->" + habitacion.getIdHabitacion());
-        logger.info("controller habitacion ----->" + habitacion.toString());
         return habitacionService.save(habitacion);
     }
 

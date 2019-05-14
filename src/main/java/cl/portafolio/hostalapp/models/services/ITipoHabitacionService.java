@@ -11,5 +11,4 @@ public interface ITipoHabitacionService {
 
     TipoHabitacion save(TipoHabitacion tipoHabitacion);
 
-
 }

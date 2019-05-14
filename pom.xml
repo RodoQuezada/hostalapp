@@ -18,6 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <property name="packagesToScan" value="/Users/ro/IdeaProjects/hostalapp/src/main/java/cl/portafolio/hostalapp/models/entity" />
     </properties>
 
     <dependencies>
@@ -63,6 +64,19 @@
             <scope>system</scope>
             <systemPath>${basedir}/ojdbc8.jar</systemPath>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jul</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
     </dependencies>
 
     <build>

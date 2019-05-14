@@ -11,11 +11,9 @@ import java.io.Serializable;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Habitacion implements Serializable {
 
-
-   // @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "HIBERNATE_SEQUENCE")
-   // @SequenceGenerator(name = "HIBERNATE_SEQUENCE",allocationSize = 1,sequenceName = "HIBERNATE_SEQUENCE")
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_HABITACION")
+    @SequenceGenerator(name = "SEQ_HABITACION",allocationSize = 1,sequenceName = "SEQ_HABITACION")
     @Column(name = "id_habitacion")
     private int idHabitacion;
 

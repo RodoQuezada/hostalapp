@@ -14,13 +14,15 @@ import java.io.Serializable;
 public class Company implements Serializable{
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "HIBERNATE_SEQUENCE")
-    @SequenceGenerator(name = "HIBERNATE_SEQUENCE",allocationSize = 1,sequenceName = "HIBERNATE_SEQUENCE")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_COMPANIES")
+    @SequenceGenerator(name = "SEQ_COMPANIES",allocationSize = 1,sequenceName = "SEQ_COMPANIES")
     private Long id;
 
     private String name;
 
     private String adress;
+
+
 
 
 }

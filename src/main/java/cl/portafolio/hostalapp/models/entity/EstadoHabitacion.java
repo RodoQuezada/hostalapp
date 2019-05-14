@@ -16,9 +16,9 @@ import java.util.List;
 public class EstadoHabitacion implements Serializable {
 
 
-    //@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "HIBERNATE_SEQUENCE")
-    //@SequenceGenerator(name = "HIBERNATE_SEQUENCE",allocationSize = 1,sequenceName = "HIBERNATE_SEQUENCE")
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_ESTADO_HABITACION")
+    @SequenceGenerator(name = "SEQ_ESTADO_HABITACION",allocationSize = 1,sequenceName = "SEQ_ESTADO_HABITACION")
     @Column(name = "id_estado")
     private Long idEstado;
 
