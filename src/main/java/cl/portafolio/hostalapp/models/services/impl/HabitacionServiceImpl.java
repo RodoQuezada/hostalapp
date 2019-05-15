@@ -1,18 +1,13 @@
 package cl.portafolio.hostalapp.models.services.impl;
 
 import cl.portafolio.hostalapp.models.entity.Habitacion;
-import cl.portafolio.hostalapp.models.entity.TipoHabitacion;
 import cl.portafolio.hostalapp.models.repository.IHabitacionRepository;
-import cl.portafolio.hostalapp.models.repository.ITipoHabitacionRepository;
 import cl.portafolio.hostalapp.models.services.IHabitacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class HabitacionServiceImpl implements IHabitacionService {
@@ -24,7 +19,7 @@ public class HabitacionServiceImpl implements IHabitacionService {
 
     @Override
     public List<Habitacion> getAll() {
-        System.out.println(" ------  pasa al servicio");
+        System.out.println("-- Servicio getAll. ");
         return (List<Habitacion>) habitacionRepository.findAll();
     }
 
@@ -43,12 +38,17 @@ public class HabitacionServiceImpl implements IHabitacionService {
 
     @Override
     public Habitacion save(Habitacion habitacion) {
-        System.out.println("---- asaaaaaaaaaaaa----------- ");
+        System.out.println("-- Servicio save. ");
         habitacionRepository.save(habitacion);
         return habitacion;
     }
 
-
+    @Override
+    public Habitacion findById(Long id) {
+     //   return habitacionRepository.findById(Long.valueOf(id).intValue()).orElse(null);
+        System.out.println("-- Servicio findById. ");
+        return habitacionRepository.findById(Long.valueOf(id).intValue()).orElseThrow(()-> new EntityNotFoundException());
+    }
 
 
 }

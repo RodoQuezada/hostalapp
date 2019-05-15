@@ -14,6 +14,8 @@ import java.util.Date;
 public class Estadia implements Serializable {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_ESTADIA")
+    @SequenceGenerator(name = "SEQ_ESTADIA",allocationSize = 1,sequenceName = "SEQ_ESTADIA")
     private Long id;
 
     @Column(name = "fecha_check_in")

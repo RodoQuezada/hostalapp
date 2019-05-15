@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -59,16 +60,29 @@ public class HabitacionController {
 
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<Habitacion> getAll(){
+        System.out.println("-- Controlador getAll. ");
         return habitacionService.getAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Habitacion save(@RequestBody Habitacion habitacion){
+        System.out.println("-- Controlador save: " + habitacion.toString());
         return habitacionService.save(habitacion);
     }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Habitacion updateHabitacion(@PathVariable(value = "id")Long id, @RequestBody @Valid Habitacion habitacion){
+        System.out.println("-- Controlador updateHabitacion: " + habitacion.toString()+ "id: "+ id);
+        Habitacion newHabitacion = habitacionService.findById(id);
+        newHabitacion.setTipohabitacion(habitacion.getTipohabitacion());
+        newHabitacion.setEstadohabitacion(habitacion.getEstadohabitacion());
+        habitacionService.save(newHabitacion);
+        return newHabitacion;
+    }
 
     @GetMapping("/estados")
     public List<EstadoHabitacion> getEstados(){

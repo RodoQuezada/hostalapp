@@ -12,6 +12,6 @@ public interface IHabitacionService {
 
     Habitacion save (Habitacion habitacion);
 
-
+    Habitacion findById(Long id);
 
 }
