@@ -19,7 +19,7 @@ public class HabitacionServiceImpl implements IHabitacionService {
 
     @Override
     public List<Habitacion> getAll() {
-        System.out.println("-- Servicio getAll. ");
+        System.out.println("--Habitacion Servicio getAll. ");
         return (List<Habitacion>) habitacionRepository.findAll();
     }
 
@@ -38,7 +38,7 @@ public class HabitacionServiceImpl implements IHabitacionService {
 
     @Override
     public Habitacion save(Habitacion habitacion) {
-        System.out.println("-- Servicio save. ");
+        System.out.println("--Habitacion Servicio save. ");
         habitacionRepository.save(habitacion);
         return habitacion;
     }
@@ -46,7 +46,7 @@ public class HabitacionServiceImpl implements IHabitacionService {
     @Override
     public Habitacion findById(Long id) {
      //   return habitacionRepository.findById(Long.valueOf(id).intValue()).orElse(null);
-        System.out.println("-- Servicio findById. ");
+        System.out.println("--Habitacion Servicio findById. ");
         return habitacionRepository.findById(Long.valueOf(id).intValue()).orElseThrow(()-> new EntityNotFoundException());
     }
 

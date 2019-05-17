@@ -62,21 +62,21 @@ public class HabitacionController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Habitacion> getAll(){
-        System.out.println("-- Controlador getAll. ");
+        System.out.println("--Habitacion Controlador getAll. ");
         return habitacionService.getAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Habitacion save(@RequestBody Habitacion habitacion){
-        System.out.println("-- Controlador save: " + habitacion.toString());
+        System.out.println("--Habitacion Controlador save: " + habitacion.toString());
         return habitacionService.save(habitacion);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public Habitacion updateHabitacion(@PathVariable(value = "id")Long id, @RequestBody @Valid Habitacion habitacion){
-        System.out.println("-- Controlador updateHabitacion: " + habitacion.toString()+ "id: "+ id);
+        System.out.println("--Habitacion Controlador updateHabitacion: " + habitacion.toString()+ "id: "+ id);
         Habitacion newHabitacion = habitacionService.findById(id);
         newHabitacion.setTipohabitacion(habitacion.getTipohabitacion());
         newHabitacion.setEstadohabitacion(habitacion.getEstadohabitacion());
