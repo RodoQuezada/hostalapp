@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -20,7 +22,7 @@ public class EstadiaController {
 
     @GetMapping("/load")
     public List<Estadia> load(){
-
+        Date date = new Date();
         Estadia estadia = new Estadia();
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -28,9 +30,12 @@ public class EstadiaController {
     //    estadia.setId(1l);
         estadia.setHabitacion(null);
         estadia.setHuesped(null);
-     // el dato de fecha no se ingresa con el formato adecuado.
-        estadia.setFechaCheackOut(new Date(2019-03-07));
-        estadia.setFechaCheckIn(new Date(2019-03-07));
+    try{
+        estadia.setFechaCheackOut(simpleDateFormat.parse("2013-02-02"));
+        estadia.setFechaCheckIn(simpleDateFormat.parse("2013-02-06"));
+    }catch (ParseException e){
+        e.printStackTrace();
+    }
         estadiaService.save(estadia);
         return estadiaService.getAll();
     }
@@ -43,7 +48,7 @@ public class EstadiaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Estadia save(Estadia estadia){
+    public Estadia save(@RequestBody @Valid Estadia estadia){
         return estadiaService.save(estadia);
     }
 

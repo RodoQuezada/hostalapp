@@ -3,10 +3,7 @@ package cl.portafolio.hostalapp.models.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -15,6 +12,8 @@ import java.io.Serializable;
 public class RepresentanteLegal implements Serializable {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_REPRESENTANTE")
+    @SequenceGenerator(name = "SEQ_REPRESENTANTE",allocationSize = 1,sequenceName = "SEQ_REPRESENTANTE")
     private Long id;
 
     private String rut;

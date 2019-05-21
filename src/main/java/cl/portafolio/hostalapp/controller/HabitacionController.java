@@ -74,7 +74,7 @@ public class HabitacionController {
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.UPGRADE_REQUIRED)
     public Habitacion updateHabitacion(@PathVariable(value = "id")Long id, @RequestBody @Valid Habitacion habitacion){
         System.out.println("--Habitacion Controlador updateHabitacion: " + habitacion.toString()+ "id: "+ id);
         Habitacion newHabitacion = habitacionService.findById(id);
