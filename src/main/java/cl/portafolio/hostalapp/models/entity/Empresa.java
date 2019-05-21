@@ -12,6 +12,8 @@ import java.util.List;
 public class Empresa implements Serializable {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_EMPRESA")
+    @SequenceGenerator(name = "SEQ_EMPRESA",allocationSize = 1,sequenceName = "SEQ_EMPRESA")
     private Long id;
 
     @Column(name = "razon_social")
