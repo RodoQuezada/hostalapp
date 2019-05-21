@@ -22,7 +22,6 @@ public class EstadiaController {
 
     @GetMapping("/load")
     public List<Estadia> load(){
-        Date date = new Date();
         Estadia estadia = new Estadia();
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);

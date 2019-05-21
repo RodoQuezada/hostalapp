@@ -1,5 +1,6 @@
 package cl.portafolio.hostalapp.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -14,6 +15,8 @@ import java.util.List;
 public class Huesped implements Serializable {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_HUESPED")
+    @SequenceGenerator(name = "SEQ_HUESPED",allocationSize = 1,sequenceName = "SEQ_HUESPED")
     private Long id;
 
     private String rut;
@@ -28,6 +31,7 @@ public class Huesped implements Serializable {
 
     @Column(name = "fecha_nacimiento")
     @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
 
@@ -37,7 +41,5 @@ public class Huesped implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Empresa empresa;
-
-
 
 }
