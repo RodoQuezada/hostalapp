@@ -1,5 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,6 +11,7 @@ import java.util.List;
 @Entity
 @Data
 @Table
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Empresa implements Serializable {
 
     @Id
@@ -30,6 +33,7 @@ public class Empresa implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private RepresentanteLegal representanteLegal;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Huesped> huespedList;
 

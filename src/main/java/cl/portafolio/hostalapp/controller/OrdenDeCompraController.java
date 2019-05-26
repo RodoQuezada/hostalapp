@@ -34,7 +34,7 @@ public class OrdenDeCompraController {
         return ordenDeCompraService.save(ordenDeCompra);
     }
 
-    @GetMapping("/estadoorden")
+    @GetMapping("/estadoorden/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String consultaEstadoOrden(@PathVariable(value = "id")Long id){
         OrdenDeCompra orde = ordenDeCompraService.findById(id);
