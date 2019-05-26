@@ -2,7 +2,6 @@ package cl.portafolio.hostalapp.models.services.impl;
 
 import cl.portafolio.hostalapp.models.entity.EstadoOrdenCompra;
 import cl.portafolio.hostalapp.models.repository.IEstadoOrdenCompraRepository;
-import cl.portafolio.hostalapp.models.services.IEstadiaService;
 import cl.portafolio.hostalapp.models.services.IEstadoOrdenCompraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

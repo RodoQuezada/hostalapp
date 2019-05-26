@@ -1,8 +1,6 @@
 package cl.portafolio.hostalapp.controller;
 
-import cl.portafolio.hostalapp.models.entity.EstadoOrdenCompra;
 import cl.portafolio.hostalapp.models.entity.OrdenDeCompra;
-import cl.portafolio.hostalapp.models.repository.IEstadoOrdenCompraRepository;
 import cl.portafolio.hostalapp.models.services.IEstadoOrdenCompraService;
 import cl.portafolio.hostalapp.models.services.IOrdenDeCompraService;
 import org.springframework.beans.factory.annotation.Autowired;

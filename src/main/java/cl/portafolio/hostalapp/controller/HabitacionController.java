@@ -5,10 +5,8 @@ import cl.portafolio.hostalapp.models.entity.EstadoHabitacion;
 import cl.portafolio.hostalapp.models.entity.Habitacion;
 import cl.portafolio.hostalapp.models.entity.TipoHabitacion;
 import cl.portafolio.hostalapp.models.repository.IEstadoHabitacionRepository;
-import cl.portafolio.hostalapp.models.repository.ITipoHabitacionRepository;
 import cl.portafolio.hostalapp.models.services.IHabitacionService;
 import cl.portafolio.hostalapp.models.services.ITipoHabitacionService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,9 +18,6 @@ import java.util.List;
 @RequestMapping("/api/habitacion")
 @CrossOrigin(origins = "http://localhost:54239")
 public class HabitacionController {
-
-
-    final static Logger logger = Logger.getLogger(HabitacionController.class);
 
     @Autowired
     private IHabitacionService habitacionService;
