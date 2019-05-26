@@ -19,6 +19,8 @@ public class Empresa implements Serializable {
     @SequenceGenerator(name = "SEQ_EMPRESA",allocationSize = 1,sequenceName = "SEQ_EMPRESA")
     private Long id;
 
+    private String rut;
+
     @Column(name = "razon_social")
     private String razonSocial;
 
@@ -36,5 +38,8 @@ public class Empresa implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Huesped> huespedList;
+
+    @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Factura> facturas;
 
 }

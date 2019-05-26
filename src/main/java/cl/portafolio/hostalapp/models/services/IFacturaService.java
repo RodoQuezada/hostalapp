@@ -8,7 +8,7 @@ public interface IFacturaService {
 
     List<Factura> getAll();
     Factura save(Factura factura);
-
+    Factura findById(Long id);
 
 
 

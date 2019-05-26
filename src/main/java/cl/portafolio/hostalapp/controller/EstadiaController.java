@@ -30,7 +30,7 @@ public class EstadiaController {
         estadia.setHabitacion(null);
         estadia.setHuesped(null);
     try{
-        estadia.setFechaCheackOut(simpleDateFormat.parse("2013-02-02"));
+        estadia.setFechaCheckOut(simpleDateFormat.parse("2013-02-02"));
         estadia.setFechaCheckIn(simpleDateFormat.parse("2013-02-06"));
     }catch (ParseException e){
         e.printStackTrace();
