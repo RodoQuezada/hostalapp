@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Entity
 @Data
 @Table
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Huesped implements Serializable {
 
     @Id
