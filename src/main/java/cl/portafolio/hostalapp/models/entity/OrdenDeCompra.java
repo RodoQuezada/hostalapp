@@ -14,6 +14,8 @@ public class OrdenDeCompra implements Serializable {
 
 
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_ORDEN_DE_COMPRA")
+    @SequenceGenerator(name = "SEQ_ORDEN_DE_COMPRA",allocationSize = 1,sequenceName = "SEQ_ORDEN_DE_COMPRA")
     private Long id;
 
     @Column(name = "cantidad_de_huespedes")

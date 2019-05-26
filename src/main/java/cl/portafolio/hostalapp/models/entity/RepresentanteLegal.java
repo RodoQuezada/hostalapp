@@ -14,8 +14,8 @@ import java.io.Serializable;
 public class RepresentanteLegal implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_REPRESENTANTE")
-    @SequenceGenerator(name = "SEQ_REPRESENTANTE",allocationSize = 1,sequenceName = "SEQ_REPRESENTANTE")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_REPRESENTANTE_LEGAL")
+    @SequenceGenerator(name = "SEQ_REPRESENTANTE_LEGAL",allocationSize = 1,sequenceName = "SEQ_REPRESENTANTE_LEGAL")
     private Long id;
 
     private String rut;

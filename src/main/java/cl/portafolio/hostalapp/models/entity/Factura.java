@@ -14,6 +14,8 @@ import java.util.Date;
 public class Factura implements Serializable {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_FACTURA")
+    @SequenceGenerator(name = "SEQ_FACTURA",allocationSize = 1,sequenceName = "SEQ_FACTURA")
     private Long id;
 
     @Column(name = "fecha_emision")
@@ -32,8 +34,5 @@ public class Factura implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Empresa empresa;
-
-
-
 
 }

@@ -31,7 +31,7 @@ public class Estadia implements Serializable {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
-    private Date fechaCheackOut;
+    private Date fechaCheckOut;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Habitacion habitacion;
