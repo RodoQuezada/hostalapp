@@ -39,7 +39,4 @@ public class Empresa implements Serializable {
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Huesped> huespedList;
 
-    @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Factura> facturas;
-
 }
