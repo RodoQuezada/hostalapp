@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/estadia")
+@CrossOrigin(origins = "http://localhost:54239")
 public class EstadiaController {
 
     @Autowired

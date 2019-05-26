@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/company")
+@CrossOrigin(origins = "http://localhost:54239")
 public class CompanyController {
 
 
