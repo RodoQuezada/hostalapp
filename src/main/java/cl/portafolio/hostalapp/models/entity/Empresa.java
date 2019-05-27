@@ -39,8 +39,9 @@ public class Empresa implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private RepresentanteLegal representanteLegal;
 
+    /*
     @JsonIgnore
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Huesped> huespedList;
+    private List<Huesped> huespedList; */
 
 }
