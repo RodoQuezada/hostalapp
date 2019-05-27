@@ -2,13 +2,17 @@ package cl.portafolio.hostalapp.models.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "representante_legal")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class RepresentanteLegal implements Serializable {
