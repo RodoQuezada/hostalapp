@@ -2,11 +2,13 @@ package cl.portafolio.hostalapp.models.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -43,5 +45,18 @@ public class Empresa implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Huesped> huespedList; */
+
+
+    public Empresa(String json) throws IOException {
+        Empresa e = new ObjectMapper().readValue(json, Empresa.class);
+        this.id = e.getId();
+        this.rut = e.getRut();
+        this.razonSocial = e.getRazonSocial();
+        this.nombreEmpresa = e.getNombreEmpresa();
+        this.direccionFacturacion = e.getDireccionFacturacion();
+        this.telefono = e.getTelefono();
+        this.representanteLegal = e.getRepresentanteLegal();
+    }
+
 
 }
