@@ -1,8 +1,10 @@
 package cl.portafolio.hostalapp.models.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.persistence.*;
+import java.io.IOException;
 import java.io.Serializable;
 
 @Entity
@@ -21,6 +23,20 @@ public class Habitacion implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private TipoHabitacion tipohabitacion;
+
+    public Habitacion() {
+    }
+
+    public Habitacion(String json) throws IOException{
+        Habitacion h = new ObjectMapper().readValue(json, Habitacion.class);
+        this.idHabitacion = h.getIdHabitacion();
+        this.estadohabitacion = h.getEstadohabitacion();
+    }
+
+    public Habitacion(EstadoHabitacion estadohabitacion, TipoHabitacion tipohabitacion) {
+        this.estadohabitacion = estadohabitacion;
+        this.tipohabitacion = tipohabitacion;
+    }
 
     public int getIdHabitacion() {
         return idHabitacion;
