@@ -30,19 +30,39 @@ public class Empresa implements Serializable {
 
     private int telefono;
 
+    @Column (name = "rut_representante")
+    private String rutRepresentanteLegal;
+
+    @Column (name = "nombre_representante")
+    private String nombreRepresentanteLegal;
+
+    @Column (name = "apellido_paterno_representante")
+    private String apellidoPaternoRepreentanteLegal;
+
+    @Column (name = "apellido_materno_representante")
+    private String apellidoMaternoRepreentanteLegal;
+
+    private String email;
+
+
+    /*
     @ManyToOne(fetch = FetchType.LAZY)
-    private RepresentanteLegal representanteLegal;
+    private RepresentanteLegal representanteLegal; */
 
     public Empresa() {
     }
 
-    public Empresa(String rut, String razonSocial, String nombreEmpresa, String direccionFacturacion, int telefono, RepresentanteLegal representanteLegal) {
+    public Empresa(String rut, String razonSocial, String nombreEmpresa, String direccionFacturacion, int telefono, String rutRepresentanteLegal, String nombreRepresentanteLegal, String apellidoPaternoRepreentanteLegal, String apellidoMaternoRepreentanteLegal, String email) {
         this.rut = rut;
         this.razonSocial = razonSocial;
         this.nombreEmpresa = nombreEmpresa;
         this.direccionFacturacion = direccionFacturacion;
         this.telefono = telefono;
-        this.representanteLegal = representanteLegal;
+        this.rutRepresentanteLegal = rutRepresentanteLegal;
+        this.nombreRepresentanteLegal = nombreRepresentanteLegal;
+        this.apellidoPaternoRepreentanteLegal = apellidoPaternoRepreentanteLegal;
+        this.apellidoMaternoRepreentanteLegal = apellidoMaternoRepreentanteLegal;
+        this.email = email;
     }
 
     public Empresa(String json) throws IOException {
@@ -53,9 +73,13 @@ public class Empresa implements Serializable {
         this.nombreEmpresa = e.getNombreEmpresa();
         this.direccionFacturacion = e.getDireccionFacturacion();
         this.telefono = e.getTelefono();
-        this.representanteLegal = e.getRepresentanteLegal();
+        this.apellidoMaternoRepreentanteLegal = e.getApellidoMaternoRepreentanteLegal();
+        this.apellidoPaternoRepreentanteLegal = e.getApellidoPaternoRepreentanteLegal();
+        this.email = e.getEmail();
+        this.nombreRepresentanteLegal = e.getNombreRepresentanteLegal();
+        this.rutRepresentanteLegal = e.getRutRepresentanteLegal();
+      //  this.representanteLegal = e.getRepresentanteLegal();
     }
-
 
 
     public Long getId() {
@@ -106,21 +130,57 @@ public class Empresa implements Serializable {
         this.telefono = telefono;
     }
 
+    /*
     public RepresentanteLegal getRepresentanteLegal() {
         return representanteLegal;
     }
 
     public void setRepresentanteLegal(RepresentanteLegal representanteLegal) {
         this.representanteLegal = representanteLegal;
-    }
+    } */
 
     /*
     @JsonIgnore
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Huesped> huespedList; */
 
+    public String getRutRepresentanteLegal() {
+        return rutRepresentanteLegal;
+    }
 
+    public void setRutRepresentanteLegal(String rutRepresentanteLegal) {
+        this.rutRepresentanteLegal = rutRepresentanteLegal;
+    }
 
+    public String getNombreRepresentanteLegal() {
+        return nombreRepresentanteLegal;
+    }
 
+    public void setNombreRepresentanteLegal(String nombreRepresentanteLegal) {
+        this.nombreRepresentanteLegal = nombreRepresentanteLegal;
+    }
 
+    public String getApellidoPaternoRepreentanteLegal() {
+        return apellidoPaternoRepreentanteLegal;
+    }
+
+    public void setApellidoPaternoRepreentanteLegal(String apellidoPaternoRepreentanteLegal) {
+        this.apellidoPaternoRepreentanteLegal = apellidoPaternoRepreentanteLegal;
+    }
+
+    public String getApellidoMaternoRepreentanteLegal() {
+        return apellidoMaternoRepreentanteLegal;
+    }
+
+    public void setApellidoMaternoRepreentanteLegal(String apellidoMaternoRepreentanteLegal) {
+        this.apellidoMaternoRepreentanteLegal = apellidoMaternoRepreentanteLegal;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
