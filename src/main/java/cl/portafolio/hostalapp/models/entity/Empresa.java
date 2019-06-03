@@ -37,10 +37,10 @@ public class Empresa implements Serializable {
     private String nombreRepresentanteLegal;
 
     @Column (name = "apellido_paterno_representante")
-    private String apellidoPaternoRepreentanteLegal;
+    private String apellidoPaternoRepresentanteLegal;
 
     @Column (name = "apellido_materno_representante")
-    private String apellidoMaternoRepreentanteLegal;
+    private String apellidoMaternoRepresentanteLegal;
 
     private String email;
 
@@ -52,7 +52,7 @@ public class Empresa implements Serializable {
     public Empresa() {
     }
 
-    public Empresa(String rut, String razonSocial, String nombreEmpresa, String direccionFacturacion, int telefono, String rutRepresentanteLegal, String nombreRepresentanteLegal, String apellidoPaternoRepreentanteLegal, String apellidoMaternoRepreentanteLegal, String email) {
+    public Empresa(String rut, String razonSocial, String nombreEmpresa, String direccionFacturacion, int telefono, String rutRepresentanteLegal, String nombreRepresentanteLegal, String apellidoPaternoRepresentanteLegal, String apellidoMaternoRepresentanteLegal, String email) {
         this.rut = rut;
         this.razonSocial = razonSocial;
         this.nombreEmpresa = nombreEmpresa;
@@ -60,8 +60,8 @@ public class Empresa implements Serializable {
         this.telefono = telefono;
         this.rutRepresentanteLegal = rutRepresentanteLegal;
         this.nombreRepresentanteLegal = nombreRepresentanteLegal;
-        this.apellidoPaternoRepreentanteLegal = apellidoPaternoRepreentanteLegal;
-        this.apellidoMaternoRepreentanteLegal = apellidoMaternoRepreentanteLegal;
+        this.apellidoPaternoRepresentanteLegal = apellidoPaternoRepresentanteLegal;
+        this.apellidoMaternoRepresentanteLegal = apellidoMaternoRepresentanteLegal;
         this.email = email;
     }
 
@@ -73,8 +73,8 @@ public class Empresa implements Serializable {
         this.nombreEmpresa = e.getNombreEmpresa();
         this.direccionFacturacion = e.getDireccionFacturacion();
         this.telefono = e.getTelefono();
-        this.apellidoMaternoRepreentanteLegal = e.getApellidoMaternoRepreentanteLegal();
-        this.apellidoPaternoRepreentanteLegal = e.getApellidoPaternoRepreentanteLegal();
+        this.apellidoMaternoRepresentanteLegal = e.getApellidoMaternoRepresentanteLegal();
+        this.apellidoPaternoRepresentanteLegal = e.getApellidoPaternoRepresentanteLegal();
         this.email = e.getEmail();
         this.nombreRepresentanteLegal = e.getNombreRepresentanteLegal();
         this.rutRepresentanteLegal = e.getRutRepresentanteLegal();
@@ -160,20 +160,20 @@ public class Empresa implements Serializable {
         this.nombreRepresentanteLegal = nombreRepresentanteLegal;
     }
 
-    public String getApellidoPaternoRepreentanteLegal() {
-        return apellidoPaternoRepreentanteLegal;
+    public String getApellidoPaternoRepresentanteLegal() {
+        return apellidoPaternoRepresentanteLegal;
     }
 
-    public void setApellidoPaternoRepreentanteLegal(String apellidoPaternoRepreentanteLegal) {
-        this.apellidoPaternoRepreentanteLegal = apellidoPaternoRepreentanteLegal;
+    public void setApellidoPaternoRepresentanteLegal(String apellidoPaternoRepresentanteLegal) {
+        this.apellidoPaternoRepresentanteLegal = apellidoPaternoRepresentanteLegal;
     }
 
-    public String getApellidoMaternoRepreentanteLegal() {
-        return apellidoMaternoRepreentanteLegal;
+    public String getApellidoMaternoRepresentanteLegal() {
+        return apellidoMaternoRepresentanteLegal;
     }
 
-    public void setApellidoMaternoRepreentanteLegal(String apellidoMaternoRepreentanteLegal) {
-        this.apellidoMaternoRepreentanteLegal = apellidoMaternoRepreentanteLegal;
+    public void setApellidoMaternoRepresentanteLegal(String apellidoMaternoRepresentanteLegal) {
+        this.apellidoMaternoRepresentanteLegal = apellidoMaternoRepresentanteLegal;
     }
 
     public String getEmail() {
