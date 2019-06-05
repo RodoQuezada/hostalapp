@@ -30,6 +30,8 @@ public class TipoHabitacion implements Serializable {
     @Column(name = "tipo_habitacion")
     private String tipoHabitacion;
 
+
+
     @JsonIgnore
     @OneToMany(mappedBy = "tipohabitacion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Habitacion> habitacionList;
@@ -44,6 +46,7 @@ public class TipoHabitacion implements Serializable {
         this.precioTipoHabitacion = t.getPrecioTipoHabitacion();
         this.tipoHabitacion = t.getTipoHabitacion();
         this.habitacionList = t.getHabitacionList();
+
     }
 
     public TipoHabitacion(int precioTipoHabitacion, int capacidadTipoHabitacion, String tipoHabitacion, List<Habitacion> habitacionList) {
@@ -51,6 +54,7 @@ public class TipoHabitacion implements Serializable {
         this.capacidadTipoHabitacion = capacidadTipoHabitacion;
         this.tipoHabitacion = tipoHabitacion;
         this.habitacionList = habitacionList;
+
     }
 
     public Long getIdTipo() {
@@ -92,4 +96,5 @@ public class TipoHabitacion implements Serializable {
     public void setHabitacionList(List<Habitacion> habitacionList) {
         this.habitacionList = habitacionList;
     }
+
 }

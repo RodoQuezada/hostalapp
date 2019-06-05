@@ -8,6 +8,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
@@ -35,6 +36,14 @@ public class Estadia implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaCheckOut;
 
+    @Column(name = "fecha_reserva")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date fechaReserva;
+
+    private boolean estado;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Habitacion habitacion;
 
@@ -51,13 +60,17 @@ public class Estadia implements Serializable {
         this.fechaCheckOut = e.getFechaCheckOut();
         this.habitacion = e.getHabitacion();
         this.huesped = e.getHuesped();
+        this.fechaReserva = e.fechaReserva;
+        this.estado = e.estado;
     }
 
-    public Estadia(Date fechaCheckIn, Date fechaCheckOut, Habitacion habitacion, Huesped huesped) {
+    public Estadia(Date fechaCheckIn, Date fechaCheckOut, Habitacion habitacion, Huesped huesped, Date fechaReserva,boolean estado) {
         this.fechaCheckIn = fechaCheckIn;
         this.fechaCheckOut = fechaCheckOut;
         this.habitacion = habitacion;
         this.huesped = huesped;
+        this.fechaReserva = fechaReserva;
+        this.estado = estado;
     }
 
     public Long getId() {
@@ -98,5 +111,21 @@ public class Estadia implements Serializable {
 
     public void setHuesped(Huesped huesped) {
         this.huesped = huesped;
+    }
+
+    public Date getFechaReserva() {
+        return fechaReserva;
+    }
+
+    public void setFechaReserva(Date fechaReserva) {
+        this.fechaReserva = fechaReserva;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }

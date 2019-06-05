@@ -24,6 +24,8 @@ public class Habitacion implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private TipoHabitacion tipohabitacion;
 
+    private int cupo;
+
     public Habitacion() {
     }
 
@@ -31,11 +33,13 @@ public class Habitacion implements Serializable {
         Habitacion h = new ObjectMapper().readValue(json, Habitacion.class);
         this.idHabitacion = h.getIdHabitacion();
         this.estadohabitacion = h.getEstadohabitacion();
+        this.cupo = h.getCupo();
     }
 
-    public Habitacion(EstadoHabitacion estadohabitacion, TipoHabitacion tipohabitacion) {
+    public Habitacion(EstadoHabitacion estadohabitacion, TipoHabitacion tipohabitacion, int cupo) {
         this.estadohabitacion = estadohabitacion;
         this.tipohabitacion = tipohabitacion;
+        this.cupo = cupo;
     }
 
     public int getIdHabitacion() {
@@ -60,5 +64,13 @@ public class Habitacion implements Serializable {
 
     public void setTipohabitacion(TipoHabitacion tipohabitacion) {
         this.tipohabitacion = tipohabitacion;
+    }
+
+    public int getCupo() {
+        return cupo;
+    }
+
+    public void setCupo(int cupo) {
+        this.cupo = cupo;
     }
 }
