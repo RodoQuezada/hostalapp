@@ -1,7 +1,6 @@
 package cl.portafolio.hostalapp.controller;
 
 import cl.portafolio.hostalapp.models.entity.Empresa;
-import cl.portafolio.hostalapp.models.entity.list.EmpresaList;
 import cl.portafolio.hostalapp.models.services.IEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,8 +38,8 @@ public class EmpresaController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody EmpresaList getAll(){
-        return new EmpresaList(empresaService.getAll());
+    public List<Empresa> getAll(){
+        return empresaService.getAll();
     }
 
 

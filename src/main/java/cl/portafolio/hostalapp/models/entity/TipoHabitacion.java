@@ -30,8 +30,6 @@ public class TipoHabitacion implements Serializable {
     @Column(name = "tipo_habitacion")
     private String tipoHabitacion;
 
-
-
     @JsonIgnore
     @OneToMany(mappedBy = "tipohabitacion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Habitacion> habitacionList;
