@@ -13,16 +13,17 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tipos_habitaciones")
+@Table(name = "tipos_platos")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class TipoHabitacion implements Serializable {
+public class TipoPlato implements Serializable {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "SEQ_TIPO_HABITACION")
-    @SequenceGenerator(name = "SEQ_TIPO_HABITACION",allocationSize = 1,sequenceName = "SEQ_TIPO_HABITACION")
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "SEQ_PLATO")
+    @SequenceGenerator(name = "SEQ_PLATO",allocationSize = 1,sequenceName = "SEQ_PLATO")
     private Long id;
-    private String tipo;
-    private int precio;
-    private int capacidad;
+
+    private String tipo;  //ejecutivo, general, etc.
+    private String motivo;  //desayuno, almuerzo, cena.
+
 
 }

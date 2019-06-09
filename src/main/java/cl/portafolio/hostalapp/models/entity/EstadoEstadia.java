@@ -1,6 +1,5 @@
 package cl.portafolio.hostalapp.models.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,18 +10,16 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tipos_habitaciones")
+@NoArgsConstructor
+@Table(name = "estados_estadia")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class TipoHabitacion implements Serializable {
+public class EstadoEstadia implements Serializable {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "SEQ_TIPO_HABITACION")
-    @SequenceGenerator(name = "SEQ_TIPO_HABITACION",allocationSize = 1,sequenceName = "SEQ_TIPO_HABITACION")
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "SEQ_ESTADO_ESTADIA")
+    @SequenceGenerator(name = "SEQ_ESTADO_ESTADIA",allocationSize = 1,sequenceName = "SEQ_ESTADO_ESTADIA")
     private Long id;
-    private String tipo;
-    private int precio;
-    private int capacidad;
+    private String estado;
 
 }
