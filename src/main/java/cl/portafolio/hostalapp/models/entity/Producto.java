@@ -29,5 +29,10 @@ public class Producto implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private Bodega bodega;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private DetallePlato detallePlato;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private TipoProducto tipoProducto;
 
 }

@@ -23,8 +23,11 @@ public class DetallePlato implements Serializable {
     @SequenceGenerator(name = "SEQ_DETALLE_PLATO",allocationSize = 1,sequenceName = "SEQ_DETALLE_PLATO")
     private Long id;
 
-    @OneToMany(mappedBy = "detalleplato", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "detallePlato", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Producto> productoList;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Plato plato;
 
 
 }

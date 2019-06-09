@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "facturas")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Factura implements Serializable {
 
     @Id
