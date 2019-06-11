@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
@@ -54,8 +55,13 @@ public class Estadia implements Serializable {
     @ManyToOne
     private Huesped huesped;
 
+    /*
     @ManyToOne
-    private OrdenDeCompra ordenDeCompra;
+    private OrdenDeCompra ordenDeCompra; */
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "estadia", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    List<OrdenDeCompra> ordenDeCompras;
 
     @OneToMany(mappedBy = "estadia", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ConsumoDiario> consumoDiarios;
@@ -69,6 +75,7 @@ public class Estadia implements Serializable {
         this.huesped = e.getHuesped();
         this.fechaReserva = e.getFechaReserva();
         this.estadoEstadia = e.getEstadoEstadia();
+        this.ordenDeCompras = e.ordenDeCompras;
     }
 
 

@@ -36,8 +36,13 @@ public class OrdenDeCompra implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private EstadoOrdenDeCompra estadoOrdenDeCompra;
 
+    /*
     @OneToMany(mappedBy = "ordenDeCompra", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Estadia> estadiaList;
+     */
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Estadia estadia;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Factura factura;
@@ -50,6 +55,7 @@ public class OrdenDeCompra implements Serializable {
         this.factura = o.getFactura();
         this.totalConsumido = o.getTotalConsumido();
         this.totalEstadia = o.getTotalEstadia();
+        this.estadia = o.getEstadia();
     }
 
 

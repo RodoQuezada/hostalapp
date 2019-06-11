@@ -1,5 +1,6 @@
 package cl.portafolio.hostalapp.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
@@ -32,6 +33,7 @@ public class Huesped implements Serializable {
     private String email;
     private int telefono;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Empresa empresa;
 

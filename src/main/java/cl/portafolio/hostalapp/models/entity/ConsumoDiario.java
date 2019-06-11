@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,7 +31,7 @@ public class ConsumoDiario implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaConsumo;
 
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Estadia estadia;
 
