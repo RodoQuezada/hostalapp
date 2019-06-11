@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/ordendepedido")
+@CrossOrigin(origins = "http://localhost:51653")
 public class OrdenDePedidoController {
 
     private final IOrdenDePedidoService ordenDePedidoService;

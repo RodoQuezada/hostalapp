@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/consumodiario")
-@CrossOrigin(origins = "http://localhost:54239")
+@CrossOrigin(origins = "http://localhost:51653")
 public class ConsumoDiarioController {
 
         private final IConsumoDiarioService consumoDiarioService;

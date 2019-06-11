@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/factura")
+@CrossOrigin(origins = "http://localhost:51653")
 public class FacturaController {
 
     private final IFacturaService facturaService;

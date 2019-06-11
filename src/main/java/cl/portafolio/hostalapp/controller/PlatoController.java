@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/plato")
+@CrossOrigin(origins = "http://localhost:51653")
 public class PlatoController {
 
     private final IPlatoService platoService;

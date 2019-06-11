@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/minuta")
+@CrossOrigin(origins = "http://localhost:51653")
 public class MinutaController {
 
     private final IMinutaService minutaService;
