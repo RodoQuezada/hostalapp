@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
@@ -41,6 +42,7 @@ public class Empresa implements Serializable {
     @Column(name = "apellido_materno_representante")
     private String apellidoMaternoRepresentante;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Huesped> huespedList;
 
