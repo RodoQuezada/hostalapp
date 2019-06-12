@@ -63,6 +63,7 @@ public class Estadia implements Serializable {
     @OneToMany(mappedBy = "estadia", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     List<OrdenDeCompra> ordenDeCompras;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "estadia", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ConsumoDiario> consumoDiarios;
 
