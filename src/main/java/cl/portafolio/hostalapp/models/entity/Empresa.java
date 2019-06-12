@@ -37,6 +37,7 @@ public class Empresa implements Serializable {
     private String nombreRepresentante;
     @Column(name = "apellido_paterno_representante")
     private String apellidoPaternoRepresentante;
+
     @Column(name = "apellido_materno_representante")
     private String apellidoMaternoRepresentante;
 
