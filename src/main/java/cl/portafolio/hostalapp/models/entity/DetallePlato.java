@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,6 +24,7 @@ public class DetallePlato implements Serializable {
     @SequenceGenerator(name = "SEQ_DETALLE_PLATO",allocationSize = 1,sequenceName = "SEQ_DETALLE_PLATO")
     private Long id;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "detallePlato", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Producto> productoList;
 

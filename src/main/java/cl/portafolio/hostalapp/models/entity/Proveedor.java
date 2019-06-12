@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,6 +36,7 @@ public class Proveedor implements Serializable {
     @Column(name = "email_delegado")
     private String emailDelegado;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "proveedor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<OrdenDePedido> ordenDePedidoList;
 

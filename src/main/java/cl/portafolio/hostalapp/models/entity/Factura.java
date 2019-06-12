@@ -1,6 +1,7 @@
 package cl.portafolio.hostalapp.models.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
@@ -42,6 +43,7 @@ public class Factura implements Serializable {
     private int total;
     private boolean pagado;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "factura", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<OrdenDeCompra> ordenDeCompraList;
 

@@ -31,7 +31,7 @@ public class ConsumoDiario implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaConsumo;
 
-    @JsonIgnore
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Estadia estadia;
 

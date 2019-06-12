@@ -1,5 +1,6 @@
 package cl.portafolio.hostalapp.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,6 +28,7 @@ public class Bodega implements Serializable {
     private int capacidad;
     private int cantidad;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "bodega", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Producto> productoList;
 }
