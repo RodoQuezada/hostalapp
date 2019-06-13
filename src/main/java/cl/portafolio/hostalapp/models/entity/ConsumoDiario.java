@@ -27,7 +27,7 @@ public class ConsumoDiario implements Serializable {
 
     @Column(name = "fecha_consumo")
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     private Date fechaConsumo;
 

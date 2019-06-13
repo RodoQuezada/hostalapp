@@ -30,13 +30,13 @@ public class Factura implements Serializable {
 
     @Column(name = "fecha_emision")
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     private Date fechaEmision;
 
     @Column(name = "fecha_vencimiento")
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     private Date fechaVencimiento;
 

@@ -26,13 +26,13 @@ public class Minuta implements Serializable {
 
     @Column(name = "fecha_inicio")
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     private Date fechaInicio;
 
     @Column(name = "fecha_termino")
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     private Date fechaTermino;
 

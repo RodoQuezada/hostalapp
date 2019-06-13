@@ -24,9 +24,6 @@ public class OrdenDeCompra implements Serializable {
     @SequenceGenerator(name = "SEQ_ESTADO_ORDEN_COMPRA",allocationSize = 1,sequenceName = "SEQ_ESTADO_ORDEN_COMPRA")
     private Long id;
 
-    @Column(name = "numero_huespedes")
-    private int numeroHuespedes;
-
     @Column(name = "total_estadia")
     private int totalEstadia;
 
@@ -50,7 +47,6 @@ public class OrdenDeCompra implements Serializable {
     public OrdenDeCompra(String json) throws IOException {
         OrdenDeCompra o = new ObjectMapper().readValue(json, OrdenDeCompra.class);
         this.id = o.getId();
-        this.numeroHuespedes = o.getNumeroHuespedes();
         this.estadoOrdenDeCompra = o.getEstadoOrdenDeCompra();
         this.factura = o.getFactura();
         this.totalConsumido = o.getTotalConsumido();
