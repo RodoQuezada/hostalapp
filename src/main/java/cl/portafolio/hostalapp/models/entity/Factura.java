@@ -40,6 +40,8 @@ public class Factura implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaVencimiento;
 
+    @Column(name = "numero_de_huespedes")
+    private int numeroDeHuespedes;
     private int total;
     private boolean pagado;
 
@@ -55,6 +57,7 @@ public class Factura implements Serializable {
         this.fechaVencimiento = f.fechaVencimiento;
         this.total = f.getTotal();
         this.ordenDeCompraList = f.getOrdenDeCompraList();
+        this.numeroDeHuespedes = f.getNumeroDeHuespedes();
     }
 
 
