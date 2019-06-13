@@ -42,6 +42,8 @@ public class Empresa implements Serializable {
     @Column(name = "apellido_materno_representante")
     private String apellidoMaternoRepresentante;
 
+    private String email;
+
     @JsonIgnore
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Huesped> huespedList;
