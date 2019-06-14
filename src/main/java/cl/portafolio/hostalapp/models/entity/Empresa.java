@@ -60,6 +60,7 @@ public class Empresa implements Serializable {
         this.apellidoPaternoRepresentante = e.getApellidoPaternoRepresentante();
         this.nombre = e.getNombre();
         this.rutRepresentante = e.getRutRepresentante();
+        this.email = e.getEmail();
     }
 
 
