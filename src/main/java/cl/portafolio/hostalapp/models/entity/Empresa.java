@@ -44,7 +44,7 @@ public class Empresa implements Serializable {
 
     private String email;
 
-    @JsonIgnore
+    //@JsonIgnore
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Huesped> huespedList;
 
@@ -61,6 +61,7 @@ public class Empresa implements Serializable {
         this.nombre = e.getNombre();
         this.rutRepresentante = e.getRutRepresentante();
         this.email = e.getEmail();
+        this.huespedList = e.getHuespedList();
     }
 
 

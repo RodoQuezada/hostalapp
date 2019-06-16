@@ -33,7 +33,7 @@ public class Huesped implements Serializable {
     private String email;
     private int telefono;
 
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Empresa empresa;
 
