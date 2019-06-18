@@ -5,6 +5,7 @@ import cl.portafolio.hostalapp.models.repository.IEmpresaRepository;
 import cl.portafolio.hostalapp.models.service.IEmpresaService;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
@@ -24,5 +25,11 @@ public class EmpresaServiceImpl implements IEmpresaService {
     @Override
     public Empresa save(Empresa empresa) {
         return empresaRepository.save(empresa);
+    }
+
+    @Override
+    public Empresa findById(Long id) {
+        System.out.println("----EmpresaServiceImpl  "+ id);
+        return empresaRepository.findById(id).orElseThrow(() ->  new EntityNotFoundException());
     }
 }

@@ -1,6 +1,8 @@
 package cl.portafolio.hostalapp.controller;
 
+import cl.portafolio.hostalapp.models.entity.Empresa;
 import cl.portafolio.hostalapp.models.entity.Huesped;
+import cl.portafolio.hostalapp.models.service.IEmpresaService;
 import cl.portafolio.hostalapp.models.service.IHuespedService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +18,12 @@ public class HuespedController {
 
     private final IHuespedService huespedService;
 
-    public HuespedController(IHuespedService huespedService) {
+    private final IEmpresaService empresaService;
+
+
+    public HuespedController(IHuespedService huespedService, IEmpresaService empresaService) {
         this.huespedService = huespedService;
+        this.empresaService = empresaService;
     }
 
     @GetMapping
@@ -29,6 +35,10 @@ public class HuespedController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Huesped save(@RequestBody @Valid Huesped huesped){
+       System.out.println(" aaaaaaaaaa " + huesped.getIdEmp());
+        Long axu = huesped.getIdEmp();
+        Empresa empresa = empresaService.findById(axu);
+        huesped.setEmpresa(empresa);
         return huespedService.save(huesped);
     }
 

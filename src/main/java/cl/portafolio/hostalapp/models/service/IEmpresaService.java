@@ -8,5 +8,6 @@ public interface IEmpresaService {
 
     List<Empresa> findAll();
     Empresa save(Empresa empresa);
+    Empresa findById(Long id);
 
 }
