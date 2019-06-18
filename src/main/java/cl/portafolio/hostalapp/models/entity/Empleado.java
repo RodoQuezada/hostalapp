@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "estados_ordenes_de_pedidos")
+@Table(name = "empleados")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Empleado implements Serializable {
 

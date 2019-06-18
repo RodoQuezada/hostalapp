@@ -5,6 +5,7 @@ import cl.portafolio.hostalapp.models.repository.IEstadiaRepository;
 import cl.portafolio.hostalapp.models.service.IEstadiaService;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
@@ -25,5 +26,10 @@ public class EstadiaServiceImpl implements IEstadiaService {
     @Override
     public Estadia save(Estadia estadia) {
         return estadiaRepository.save(estadia);
+    }
+
+    @Override
+    public Estadia findById(Long id) {
+        return estadiaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
     }
 }

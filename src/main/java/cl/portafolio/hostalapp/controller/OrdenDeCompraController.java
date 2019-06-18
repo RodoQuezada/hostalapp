@@ -1,5 +1,6 @@
 package cl.portafolio.hostalapp.controller;
 
+import cl.portafolio.hostalapp.models.entity.Estadia;
 import cl.portafolio.hostalapp.models.entity.OrdenDeCompra;
 import cl.portafolio.hostalapp.models.repository.IOrdenDeCompraRepository;
 import org.springframework.http.HttpStatus;
@@ -31,6 +32,25 @@ public class OrdenDeCompraController {
     public OrdenDeCompra save(@RequestBody @Valid OrdenDeCompra ordenDeCompra){
         return ordenDeCompraRepository.save(ordenDeCompra);
     }
+
+
+    /*
+    @GetMapping("/load")
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody List<OrdenDeCompra> load(){
+        OrdenDeCompra ordenDeCompra = new OrdenDeCompra();
+
+        Estadia estadia = new Estadia();
+
+
+
+        ordenDeCompra.setEstadia();
+        ordenDeCompra.setEstadoOrdenDeCompra();
+        ordenDeCompra.setFactura();
+        ordenDeCompra.setTotalConsumido(32000);
+        ordenDeCompra.setTotalEstadia(100000);
+        return  ordenDeCompraRepository.findAll();
+    } */
 
 
 }

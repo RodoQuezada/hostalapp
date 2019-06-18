@@ -11,6 +11,7 @@ import cl.portafolio.hostalapp.models.repository.IEstadoOrdenDePedidoRepository;
 import cl.portafolio.hostalapp.models.service.IEstadoService;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
@@ -46,5 +47,10 @@ public class EstadoServiceImpl implements IEstadoService {
     @Override
     public List<EstadoOrdenDePedido> findAllEstadoOrdenDePedido() {
         return ordenDePedidoRepository.findAll();
+    }
+
+    @Override
+    public EstadoEstadia findByIdEstadoEstadia(Long id) {
+        return estadoEstadiaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
     }
 }

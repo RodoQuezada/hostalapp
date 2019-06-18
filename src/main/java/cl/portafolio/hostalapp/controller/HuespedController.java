@@ -35,10 +35,10 @@ public class HuespedController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Huesped save(@RequestBody @Valid Huesped huesped){
-       System.out.println(" aaaaaaaaaa " + huesped.getIdEmp());
+     /*  System.out.println(" aaaaaaaaaa " + huesped.getIdEmp());
         Long axu = huesped.getIdEmp();
         Empresa empresa = empresaService.findById(axu);
-        huesped.setEmpresa(empresa);
+        huesped.setEmpresa(empresa); */
         return huespedService.save(huesped);
     }
 

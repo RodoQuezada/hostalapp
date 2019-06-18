@@ -9,5 +9,6 @@ public interface IEstadiaService {
 
     List<Estadia> findAll();
     Estadia save(Estadia estadia);
+    Estadia findById(Long id);
 
 }

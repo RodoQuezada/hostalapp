@@ -32,9 +32,9 @@ public class Huesped implements Serializable {
     private String apellidoMaterno;
     private String email;
     private int telefono;
-    private Long idEmp;
 
-    @JsonIgnore
+
+  //  @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Empresa empresa;
 
@@ -48,7 +48,6 @@ public class Huesped implements Serializable {
         this.nombre = h.getNombre();
         this.rut = h.getRut();
         this.telefono = h.getTelefono();
-        this.idEmp = h.getIdEmp();
     }
 
 }
