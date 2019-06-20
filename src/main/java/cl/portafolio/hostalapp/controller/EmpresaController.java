@@ -2,6 +2,7 @@ package cl.portafolio.hostalapp.controller;
 
 import cl.portafolio.hostalapp.models.entity.Empresa;
 import cl.portafolio.hostalapp.models.service.IEmpresaService;
+import cl.portafolio.hostalapp.models.service.IHuespedService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,10 +15,12 @@ import java.util.List;
 public class EmpresaController {
 
     private final IEmpresaService empresaService;
+    private final IHuespedService huespedService;
 
 
-    public EmpresaController(IEmpresaService empresaService) {
+    public EmpresaController(IEmpresaService empresaService, IHuespedService huespedService) {
         this.empresaService = empresaService;
+        this.huespedService = huespedService;
     }
 
     @GetMapping
@@ -31,4 +34,19 @@ public class EmpresaController {
     public Empresa save(@RequestBody @Valid Empresa empresa){
         return empresaService.save(empresa);
     }
+
+
+    @GetMapping("/load-list")
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody List<Empresa> loadList(){
+
+        System.out.println("-----  prueba logggggg");
+
+        
+
+        return empresaService.findAll();
+    }
+
+
+
 }

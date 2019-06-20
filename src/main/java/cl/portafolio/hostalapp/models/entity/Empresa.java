@@ -44,7 +44,8 @@ public class Empresa implements Serializable {
 
     private String email;
 
-    @JsonIgnore
+   // @JsonIgnore
+    @JsonIgnoreProperties(value = "empresa", allowSetters = true)
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Huesped> huespedList;
 

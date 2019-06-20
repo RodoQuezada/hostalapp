@@ -35,6 +35,7 @@ public class Huesped implements Serializable {
 
 
   //  @JsonIgnore
+    @JsonIgnoreProperties(value = "huespedList")
     @ManyToOne(fetch = FetchType.LAZY)
     private Empresa empresa;
 
