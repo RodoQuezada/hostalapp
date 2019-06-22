@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -36,6 +37,8 @@ public class EstadiaController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Estadia save(@RequestBody @Valid Estadia estadia){
+        estadia.setFechaReserva(new Date());
+        System.out.println("-- fecha reserva : "+ estadia.getFechaReserva());
         return estadiaService.save(estadia);
     }
 
