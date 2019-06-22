@@ -30,7 +30,8 @@ public class Estadia implements Serializable {
 
     @Column(name = "fecha_check_in")
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date fechaCheckIn;
 
