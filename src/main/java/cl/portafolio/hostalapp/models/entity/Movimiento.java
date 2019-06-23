@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -17,7 +18,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(name = "movimientos")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Movimiento {
+public class Movimiento implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "SEQ_MOVIMIENTO")

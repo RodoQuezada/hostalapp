@@ -45,6 +45,10 @@ public class Factura implements Serializable {
     private int total;
     private boolean pagado;
 
+    private Long auxIdempresa;
+
+    private boolean facturada;
+
     @JsonIgnore
     @OneToMany(mappedBy = "factura", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<OrdenDeCompra> ordenDeCompraList;
@@ -58,6 +62,8 @@ public class Factura implements Serializable {
         this.total = f.getTotal();
         this.ordenDeCompraList = f.getOrdenDeCompraList();
         this.numeroDeHuespedes = f.getNumeroDeHuespedes();
+        this.auxIdempresa = f.getAuxIdempresa();
+        this.facturada = f.isFacturada();
     }
 
 }
