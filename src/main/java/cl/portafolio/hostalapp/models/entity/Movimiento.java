@@ -14,7 +14,6 @@ import java.util.Date;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "movimientos")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -45,7 +44,6 @@ public class Movimiento {
     }
 
 
-
-
-
+    public Movimiento() {
+    }
 }

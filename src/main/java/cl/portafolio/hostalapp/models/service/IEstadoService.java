@@ -15,6 +15,7 @@ public interface IEstadoService {
     List<EstadoOrdenDePedido> findAllEstadoOrdenDePedido();
 
     EstadoEstadia findByIdEstadoEstadia(Long id);
+    EstadoHabitacion findByIdEstadoHabitacion (Long id);
 
 
 }

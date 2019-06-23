@@ -8,4 +8,5 @@ public interface IHuespedService {
 
     List<Huesped> findAll();
     Huesped save(Huesped huesped);
+
 }

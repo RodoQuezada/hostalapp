@@ -29,6 +29,7 @@ public class Habitacion implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private TipoHabitacion tipoHabitacion;
 
+
     private int cupo;
 
     public Habitacion(String json) throws IOException {

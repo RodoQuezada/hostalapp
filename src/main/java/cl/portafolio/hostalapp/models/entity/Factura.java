@@ -60,5 +60,4 @@ public class Factura implements Serializable {
         this.numeroDeHuespedes = f.getNumeroDeHuespedes();
     }
 
-
 }

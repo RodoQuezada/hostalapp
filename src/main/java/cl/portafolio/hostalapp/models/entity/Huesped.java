@@ -13,7 +13,6 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "huespedes")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -51,4 +50,6 @@ public class Huesped implements Serializable {
         this.telefono = h.getTelefono();
     }
 
+    public Huesped() {
+    }
 }

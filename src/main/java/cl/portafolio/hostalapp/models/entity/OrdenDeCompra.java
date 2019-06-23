@@ -13,7 +13,6 @@ import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ordenes_de_compras")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -54,5 +53,6 @@ public class OrdenDeCompra implements Serializable {
         this.estadia = o.getEstadia();
     }
 
-
+    public OrdenDeCompra() {
+    }
 }

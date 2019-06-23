@@ -53,4 +53,9 @@ public class EstadoServiceImpl implements IEstadoService {
     public EstadoEstadia findByIdEstadoEstadia(Long id) {
         return estadoEstadiaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
     }
+
+    @Override
+    public EstadoHabitacion findByIdEstadoHabitacion(Long id) {
+        return estadoHabitacionRepository.findById(id).orElseThrow(() ->  new EntityNotFoundException());
+    }
 }

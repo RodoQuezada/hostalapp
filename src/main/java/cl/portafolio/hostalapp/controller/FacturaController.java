@@ -23,7 +23,9 @@ public class FacturaController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody List<Factura> findAll(){
-        return facturaService.findAll();
+        List<Factura> list = facturaService.findAll();
+        System.out.println("-- facturas: " + list.toString());
+        return list;
     }
 
     @PostMapping

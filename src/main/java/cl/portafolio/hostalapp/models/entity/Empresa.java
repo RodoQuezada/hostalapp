@@ -65,5 +65,4 @@ public class Empresa implements Serializable {
         this.huespedList = e.getHuespedList();
     }
 
-
 }

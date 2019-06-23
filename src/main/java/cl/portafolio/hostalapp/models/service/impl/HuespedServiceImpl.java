@@ -25,4 +25,6 @@ public class HuespedServiceImpl implements IHuespedService {
     public Huesped save(Huesped huesped) {
         return huespedRepository.save(huesped);
     }
+
+
 }

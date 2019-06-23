@@ -7,6 +7,8 @@ import cl.portafolio.hostalapp.models.service.IHuespedService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
+import javax.persistence.StoredProcedureQuery;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -19,6 +21,7 @@ public class HuespedController {
     private final IHuespedService huespedService;
 
     private final IEmpresaService empresaService;
+
 
 
     public HuespedController(IHuespedService huespedService, IEmpresaService empresaService) {
@@ -35,6 +38,9 @@ public class HuespedController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Huesped save(@RequestBody @Valid Huesped huesped){
+
+
+
      /*  System.out.println(" aaaaaaaaaa " + huesped.getIdEmp());
         Long axu = huesped.getIdEmp();
         Empresa empresa = empresaService.findById(axu);
