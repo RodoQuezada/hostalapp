@@ -42,7 +42,7 @@ public class EstadiaController {
         return estadiaService.save(estadia);
     }
 
-
+/*
     @PutMapping("/checkin/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public Estadia checkin(@PathVariable(value = "id")Long id){
@@ -67,7 +67,31 @@ public class EstadiaController {
         return nuevaEsta;
     }
 
+*/
 
+    @PutMapping("/checkin")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Estadia checkin(@RequestBody @Valid Estadia estadia){
+        Estadia nuevaEsta = estadiaService.findById(estadia.getId());
+        EstadoHabitacion asignada = estadoService.findByIdEstadoHabitacion(2l);
+        EstadoEstadia iniciada = estadoService.findByIdEstadoEstadia(2l);
+        nuevaEsta.setEstadoEstadia(iniciada);
+        nuevaEsta.getHabitacion().setEstadoHabitacion(asignada);
+        estadiaService.save(nuevaEsta);
+        return nuevaEsta;
+    }
+
+    @PutMapping("/checkout")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Estadia checkout(@RequestBody @Valid Estadia estadia){
+        Estadia nuevaEsta = estadiaService.findById(estadia.getId());
+        EstadoHabitacion disponible = estadoService.findByIdEstadoHabitacion(1l);
+        EstadoEstadia calculo = estadoService.findByIdEstadoEstadia(3l);
+        nuevaEsta.setEstadoEstadia(calculo);
+        nuevaEsta.getHabitacion().setEstadoHabitacion(disponible);
+        estadiaService.save(nuevaEsta);
+        return nuevaEsta;
+    }
 
 
 }
