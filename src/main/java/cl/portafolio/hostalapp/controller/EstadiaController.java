@@ -77,6 +77,7 @@ public class EstadiaController {
         EstadoEstadia iniciada = estadoService.findByIdEstadoEstadia(2l);
         nuevaEsta.setEstadoEstadia(iniciada);
         nuevaEsta.getHabitacion().setEstadoHabitacion(asignada);
+        nuevaEsta.getHabitacion().setCupo(nuevaEsta.getHabitacion().getCupo() - 1);
         estadiaService.save(nuevaEsta);
         return nuevaEsta;
     }
@@ -89,6 +90,7 @@ public class EstadiaController {
         EstadoEstadia calculo = estadoService.findByIdEstadoEstadia(3l);
         nuevaEsta.setEstadoEstadia(calculo);
         nuevaEsta.getHabitacion().setEstadoHabitacion(disponible);
+        nuevaEsta.getHabitacion().setCupo(nuevaEsta.getHabitacion().getCupo() + 1);
         estadiaService.save(nuevaEsta);
         return nuevaEsta;
     }
