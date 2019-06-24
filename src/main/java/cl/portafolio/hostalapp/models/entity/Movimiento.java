@@ -27,7 +27,7 @@ public class Movimiento implements Serializable {
 
     @Column(name = "fecha")
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date fecha;
 
