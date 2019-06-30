@@ -49,7 +49,8 @@ public class Factura implements Serializable {
 
     private boolean facturada;
 
-    @JsonIgnore
+
+    @JsonIgnoreProperties(value = "factura")
     @OneToMany(mappedBy = "factura", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<OrdenDeCompra> ordenDeCompraList;
 
