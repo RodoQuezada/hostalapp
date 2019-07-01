@@ -1,8 +1,10 @@
 package cl.portafolio.hostalapp.controller;
 
+import cl.portafolio.hostalapp.models.entity.Estadia;
 import cl.portafolio.hostalapp.models.entity.EstadoEstadia;
 import cl.portafolio.hostalapp.models.entity.OrdenDeCompra;
 import cl.portafolio.hostalapp.models.repository.IOrdenDeCompraRepository;
+import cl.portafolio.hostalapp.models.service.IEstadiaService;
 import cl.portafolio.hostalapp.models.service.IEstadoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +19,13 @@ public class OrdenDeCompraController {
 
     private final IOrdenDeCompraRepository ordenDeCompraRepository;
     private final IEstadoService estadoService;
+    private final IEstadiaService estadiaService;
 
 
-    public OrdenDeCompraController(IOrdenDeCompraRepository ordenDeCompraRepository, IEstadoService estadoService) {
+    public OrdenDeCompraController(IOrdenDeCompraRepository ordenDeCompraRepository, IEstadoService estadoService, IEstadiaService estadiaService) {
         this.ordenDeCompraRepository = ordenDeCompraRepository;
         this.estadoService = estadoService;
+        this.estadiaService = estadiaService;
     }
 
     @GetMapping
@@ -34,7 +38,13 @@ public class OrdenDeCompraController {
     @ResponseStatus(HttpStatus.CREATED)
     public OrdenDeCompra save(@RequestBody @Valid OrdenDeCompra ordenDeCompra){
         EstadoEstadia finalizada = estadoService.findByIdEstadoEstadia(4l);
-        ordenDeCompra.getEstadia().setEstadoEstadia(finalizada);
+
+        Estadia estadiaNueva = estadiaService.findById(ordenDeCompra.getEstadia().getId());
+        estadiaNueva.setEstadoEstadia(finalizada);
+        estadiaService.save(estadiaNueva);
+        ordenDeCompra.setEstadia(estadiaNueva);
+
+       // ordenDeCompra.getEstadia().setEstadoEstadia(finalizada);
         return ordenDeCompraRepository.save(ordenDeCompra);
     }
 
