@@ -5,6 +5,7 @@ import cl.portafolio.hostalapp.models.repository.IFacturaRepository;
 import cl.portafolio.hostalapp.models.service.IFacturaService;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
@@ -25,5 +26,10 @@ public class FacturaServiceImpl implements IFacturaService {
     @Override
     public Factura save(Factura factura) {
         return facturaRepository.save(factura);
+    }
+
+    @Override
+    public Factura findById(Long id) {
+        return facturaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
     }
 }

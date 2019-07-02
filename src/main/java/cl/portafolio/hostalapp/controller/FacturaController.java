@@ -32,4 +32,21 @@ public class FacturaController {
     public Factura save(@RequestBody @Valid Factura factura){
         return facturaService.save(factura);
     }
+
+
+    @PutMapping("/actualizar")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Factura actualizar(@RequestBody @Valid Factura factura){
+        Factura newFactura = facturaService.findById(factura.getId());
+
+        newFactura.setFechaEmision(factura.getFechaEmision());
+        newFactura.setFechaVencimiento(factura.getFechaVencimiento());
+        newFactura.setTotal(factura.getTotal());
+        newFactura.setNumeroDeHuespedes(factura.getNumeroDeHuespedes());
+        newFactura.setFacturada(factura.isFacturada());
+
+        return facturaService.save(newFactura);
+    }
+
+
 }

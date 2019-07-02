@@ -16,6 +16,6 @@ public interface IEstadoService {
 
     EstadoEstadia findByIdEstadoEstadia(Long id);
     EstadoHabitacion findByIdEstadoHabitacion (Long id);
-
+    EstadoOrdenDeCompra findByIdEstadoOrdenDeCompra(Long id);
 
 }

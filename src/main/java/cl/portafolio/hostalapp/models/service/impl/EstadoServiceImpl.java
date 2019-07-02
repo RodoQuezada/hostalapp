@@ -21,12 +21,14 @@ public class EstadoServiceImpl implements IEstadoService {
     private final IEstadoEstadiaRepository estadoEstadiaRepository;
     private final IEstadoOrdenDeCompraRepository estadoOrdenDeCompraRepository;
     private final IEstadoOrdenDePedidoRepository ordenDePedidoRepository;
+    private final IEstadoOrdenDeCompraRepository ordenDeCompraRepository;
 
-    public EstadoServiceImpl(IEstadoHabitacionRepository estadoHabitacionRepository, IEstadoEstadiaRepository estadoEstadiaRepository, IEstadoOrdenDeCompraRepository estadoOrdenDeCompraRepository, IEstadoOrdenDePedidoRepository ordenDePedidoRepository) {
+    public EstadoServiceImpl(IEstadoHabitacionRepository estadoHabitacionRepository, IEstadoEstadiaRepository estadoEstadiaRepository, IEstadoOrdenDeCompraRepository estadoOrdenDeCompraRepository, IEstadoOrdenDePedidoRepository ordenDePedidoRepository, IEstadoOrdenDeCompraRepository ordenDeCompraRepository) {
         this.estadoHabitacionRepository = estadoHabitacionRepository;
         this.estadoEstadiaRepository = estadoEstadiaRepository;
         this.estadoOrdenDeCompraRepository = estadoOrdenDeCompraRepository;
         this.ordenDePedidoRepository = ordenDePedidoRepository;
+        this.ordenDeCompraRepository = ordenDeCompraRepository;
     }
 
     @Override
@@ -57,5 +59,10 @@ public class EstadoServiceImpl implements IEstadoService {
     @Override
     public EstadoHabitacion findByIdEstadoHabitacion(Long id) {
         return estadoHabitacionRepository.findById(id).orElseThrow(() ->  new EntityNotFoundException());
+    }
+
+    @Override
+    public EstadoOrdenDeCompra findByIdEstadoOrdenDeCompra(Long id) {
+        return ordenDeCompraRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
     }
 }
